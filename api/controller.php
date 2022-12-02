@@ -4,15 +4,10 @@ if(isset($_POST['type']))
 {
     if($_POST['type'] == get)
     {
-        if(isset($_POST['limit']))
-        {
-            $i = $_POST['limit'];
-
-            for()
-        }
+        echo 'x';
     }
     else if($_POST['type'] == post)
     {
-        // Tutaj odbieram dane
+
     }
 }
