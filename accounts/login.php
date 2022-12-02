@@ -8,7 +8,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT `user_id`, `login`, `passwd` FROM users WHERE `login` = $username";
+    $sql = "SELECT `user_id`, `login`, `passwd` FROM users WHERE `login` = '$username'";
 
     $res = $conn -> query($sql);
 
@@ -21,7 +21,15 @@ if(isset($_POST['username']) && isset($_POST['password']))
         if($log['login'] == $username && $log['passwd'] == $password)
         {
             $_SESSION['username'] == $log['user_id'];
-            header();
+            header('location: ../dashboard.html');
         }
+        else
+        {
+            echo "Dane logowania są niepoprawne";
+        }
+    }
+    else
+    {
+        echo "Takie konto już istnieje";
     }
 }
