@@ -1,0 +1,53 @@
+body
+{
+    background-color: gray;
+    margin: 0px;
+}
+
+header
+{
+    position: sticky;
+
+    background-color: orange;
+    height: 50px;
+}
+
+#menu
+{
+    position: relative;
+
+    left: -31%;
+
+    padding-right: 2px;
+
+    position: absolute;
+    height: 400px;
+    width: 30%;
+
+    background-color: orangered;
+}
+
+.menuPos
+{
+    display: block;
+
+    border: 1px black solid;
+
+    width: 100%;
+
+    margin: 0 auto;
+    background-color: orange;
+}
+
+#mainGrid
+{
+
+}
+
+.card
+{
+    width: 30%;
+    height: 40%;
+
+    background-color: orange;
+}
