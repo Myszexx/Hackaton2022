@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <title>WLM/login</title>
+</head>
+<body style="background-color: green;">
+<div id="loginPanel">
+  <h1 id="loginTitle">Podaj dane logowania:</h1>
+  <form action="accounts/register.php" method="post">
+    <input type="text" id="loginInput_1" name="username" placeholder="login"><br><br>
+    <input type="password" id="loginInput_2" name="password" placeholder="hasło"><br><br>
+    <input type="password" id="loginInput_2" name="checkpass" placeholder="hasło"><br><br>
+    <input type="email" id="loginInput_2" name="email" placeholder="hasło"><br><br>
+    <a href="login.html" id="registerButton">Masz konto?<br>Zaloguj się</a>
+    <input id="loginButton" type="submit" value="Login">
+  </form>
+</div>
+</body>
+</html>
