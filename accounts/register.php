@@ -10,7 +10,7 @@ if(isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password
     $password = $_POST['password'];
     $checkpass = $_POST['checkpass'];
 
-    $sql = "SELECT `mail` FROM users WHERE `mail` = '$email'";
+    $sql = "SELECT `login`, `mail` FROM users WHERE `mail` = '$email' OR `login` = '$username'";
 
     $res = $conn -> query($sql);
 
