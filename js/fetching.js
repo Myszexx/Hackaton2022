@@ -25,3 +25,8 @@ function fetchdata(url,method='POST', variables=null){
 function Test(){
     fetchdata('./test.php','POST',[['name','value'],['name1','value1']]);
 }
+
+function generateHarmo(range, startdate){
+    fetchdata('./harmonogram.php','POST',[['type','harmonogram'],['length',range],['startday',startdate]]);
+    
+}
