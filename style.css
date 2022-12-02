@@ -1,0 +1,84 @@
+#loginPanel
+{
+    position: relative;
+    background-color: gray;
+
+    padding-top: 1%;
+    min-height: 250px;
+    min-width: 400px;
+
+    width: 30vw;
+    height: 40vh;
+    left: 10vw;
+    top: 10vh;
+
+    border-radius: 10%;
+}
+
+#loginTitle
+{
+    position: inline-block;
+
+    margin: 5%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 20px;
+
+    text-align: center;
+
+    color: #000000;
+}
+
+#loginInput_1
+{
+    display : block;
+
+    margin: auto;
+    width: 80%;
+
+    font-size: 150%;
+
+    border: 1px solid #000000;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#loginInput_2
+{
+    display : block;
+
+    margin: auto;
+    width: 80%;
+
+    font-size: 150%;
+
+    border: 1px solid #000000;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#registerButton
+{
+    display: block;
+    float: left;
+
+    text-decoration: none;
+
+    margin: 0 10%;
+    font-size: 100%;
+}
+
+#loginButton
+{
+    display : block;
+    float: left;
+
+    margin: 0 5%;
+    font-size: 150%;
+
+    background-color: black;
+    color: white;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
