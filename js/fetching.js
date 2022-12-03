@@ -33,14 +33,19 @@ function fetchdata(url,method='POST', variables=null){
         })
         .then(function (body){
             //return JSON.parse(body);
+            let time_arr=[[],[],[],[]]
             console.log(body)
             console.log(JSON.parse(body).time.start_date);
             console.log('Data' + gstring2);
             JSON.parse(body).time.forEach((repo)=>{
                 let daynum=Math.floor((Date.parse(repo.start_date)-Date.parse(gstring2))/ (24*60*60*1000));
                 console.log('day' + daynum + ' s ' + Date.parse(repo.start_date));
-                genTimes(repo.id,daynum,repo.start_date,repo.end_date,repo.type);
+                let smal_arr = genTimes(repo.id,daynum,repo.start_date,repo.end_date,repo.type);
+                time_arr[daynum].push(smal_arr);
                 setTimeout(100);
+
+            });
+            JSON.parse(body).tasks.forEach((repo)=>{
 
             });
         });
@@ -78,10 +83,11 @@ function Test(){
 function generateHarmo(range, startdate){
     gstring1=range;
     gstring2=startdate;
-    //fetchdata('/hack/api/harmonogramGet.php','POST',[['type','harmonogram'],['length',range],['startday',startdate]]);
-    fetchdata('/hack/modules/harmo.json','POST');
+    fetchdata('/hack/api/harmonogramGet.php','POST',[['type','harmonogram'],['length',range],['startday',startdate]]);
+    //fetchdata('/hack/modules/harmo.json','POST');
 }
 function genTimes(id,daynum,start,end,type){
+    let arr=[]
     let bcg = document.createElement('div')
     bcg.setAttribute('class','card');
     bcg.setAttribute('id','t'+id);
@@ -89,13 +95,14 @@ function genTimes(id,daynum,start,end,type){
     console.log(start);
     start=new Date(start)
     end=new Date(end)
-    console.log('Data: ' + start);
-    console.log('DAta: ' + end);
+    //console.log('Data: ' + start);
+    //console.log('DAta: ' + end);
     start=start.getHours()*12+Math.round(start.getMinutes()/5)
     end=end.getHours()*12+Math.round(end.getMinutes()/5)
-    console.log('Pole: ' + start);
-    console.log('Pole: ' + end);
-    bcg.style.cssText =`grid-column: `+daynum+`/ span  1;
+    arr.push([start,end,type])
+    //console.log('Pole: ' + start);
+    //console.log('Pole: ' + end);
+    bcg.style.cssText =`grid-column: `+(daynum+1)+`/ span  1;
                         grid-row: `+start+` / `+ end + `;
                         background-color:rgba(100,30,30,0.3);
                         z-index: 100;`;
@@ -104,6 +111,8 @@ function genTimes(id,daynum,start,end,type){
         location.href = 'details.php?type=time&id='+id
     }, false);
     document.getElementById('upGrid').appendChild(bcg);
+    console.log(arr);
+    return arr
 }
 function cardGen(id,daynum,start,end,type,color,comment,title,deadline,color){
 
