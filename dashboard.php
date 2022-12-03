@@ -84,10 +84,16 @@ else
             <input type="text" id="title" name="title"><br><br>
             <label for="priority">Priority:</label>
             <input type="number" id="priority" name="priority"><br><br>
-            <label for="alerts">Alerts:</label>
+            <label for="type">Typ:</label>
+            <select name="type" id="type">
+                <option value=1>Praca</option>
+                <option value=2>Życie prywatne</option>
+            </select>
+            <br><br>
+            <label for="alerts">Deadline:</label>
             <input type="date" id="alerts" name="alerts"><br><br>
             <label for="colors">Colors:</label>
-            <input type="text" id="colors" name="colors"><br><br>
+            <input type="color" id="colors" name="colors"><br><br>
             <label for="comment">Comment:</label><br>
             <textarea rows="5" cols="30" id="comment" name="comment"></textarea><br><br>
             <button onclick="getFormData(); ChangeDiv('addTaskPanel', 'none')">Wprowadź</button>
@@ -103,8 +109,8 @@ else
         <input type="time" id="time_end" name="time_end"><br><br>
         <label for="type">Typ:</label>
         <select name="type" id="type">
-            <option value="Praca">Praca</option>
-            <option value="Życie prywatne">Życie prywatne</option>
+            <option value=1>Praca</option>
+            <option value=2>Życie prywatne</option>
         </select>
         <br><br>
         <button onclick="getFormData(); ChangeDiv('insertTaskPanel', 'none')">Wprowadź</button>
