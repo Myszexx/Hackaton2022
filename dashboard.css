@@ -217,9 +217,10 @@ span{
     height: 75%;
     width: 80%;
     margin: auto;
-    margin-top: 15%;
-    row-gap: 5%;
+    margin-top: 10%;
+    row-gap: 10%;
     column-gap: 5%;
+    line-height:4px;
 
 
 }
@@ -236,9 +237,16 @@ span{
 
 .do{
     border-radius: 5px;
-    background-color: #FCEDD5;
+    background-color: #F5F5F5;
     grid-row: 2/ span 1;
     grid-column: 1 / span 2;
+}
+
+.do > h3{
+    display: inline-block;
+    width: max-content;
+    text-align: center;
+    margin-left: 10px;
 }
 
 #logo{
@@ -246,4 +254,19 @@ span{
     float: left;
     clear: both;
     font-weight: 600;
+}
+
+.arrow{
+    height: 80%;
+    width: auto;
+    float: right;
+
+margin-top: 1%;
+margin-right: 10px;
+}
+
+.bb{
+    height: 80%;
+    width: auto;
+    margin: auto;
 }

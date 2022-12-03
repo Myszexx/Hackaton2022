@@ -83,11 +83,12 @@ function fetchdata(url,method='POST', variables=null){
                 console.log('day' + daynum + ' s ' + Date.parse(repo.start_date));
                 
                 let smal_arr = genTimes(repo.id,daynum,repo.start_date,repo.end_date,repo.type);
-                //console.log("To maly array: " + smal_arr)
+                //console.table( smal_arr)
+                if(daynum>=0){
                 //let valid_arr = smal_arr.split(",")
                 time_arr[daynum].push(smal_arr);
                 setTimeout(100);
-                time_fake_obj = genFakeObj(time_arr);
+                time_fake_obj = genFakeObj(time_arr);}
             });
                 let tasksObj=[]
             JSON.parse(body).tasks.forEach((repo)=>{

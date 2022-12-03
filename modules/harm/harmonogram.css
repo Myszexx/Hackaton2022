@@ -1,6 +1,11 @@
+*{
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+}
+
 body
 {
-    background-color: gray;
+    background-color: rgb(219, 219, 219);
     margin: 0px;
 }
 
@@ -8,7 +13,7 @@ header
 {
     position: sticky;
 
-    background-color: orange;
+    background-color: #FFFFFF;
     height: 50px;
 }
 
@@ -55,7 +60,7 @@ header
 }
 
 #hours>div:nth-child(2n+1){
-    background-color: rgb(126, 126, 65);
+    background-color: #FCEDD5;
 }
 
 .grid
@@ -98,4 +103,148 @@ header
     left: 0%;
 }
 
+#hours > div{
+    text-align: center;
+    font-size: 30px;
+    
+}
 
+.menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+}
+
+
+.logOutButton{
+    position: relative;
+
+    float: right;
+
+    background-color: black;
+    color: white;
+
+    font-weight: bold;
+
+    top: -50px;
+    right: 15px;
+
+    height: 50px;
+    width: 5%;
+}
+
+.logOutButton:hover{
+    position: relative;
+
+    float: right;
+
+    background-color: red;
+    color: black;
+
+    font-weight: bold;
+
+    top: -50px;
+    right: 15px;
+
+    height: 50px;
+    width: 5%;
+}
+
+.icon
+{
+    position: relative;
+
+    left: 10%;
+    top: 10%;
+
+    width: 75%;
+    height: 75%;
+}
+
+
+
+span{
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    float: right;
+    margin-left: 20px;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.small_grid{
+    display: grid;
+    grid-template-columns: 62% 30%;
+    grid-template-rows: 37% 43%;
+    height: 75%;
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+    row-gap: 10%;
+    column-gap: 5%;
+    line-height:4px;
+
+
+}
+
+.ru{
+    border-radius: 5px;
+    background-color: black;
+    width: 100%;
+    height:auto
+}
+.ru:hover{
+    background-color: rgb(8, 8, 8);
+}
+
+.do{
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    grid-row: 2/ span 1;
+    grid-column: 1 / span 2;
+}
+
+.do > h3{
+    display: inline-block;
+    width: max-content;
+    text-align: center;
+    margin-left: 10px;
+}
+
+#logo{
+    font-size: 250%;
+    float: left;
+    clear: both;
+    font-weight: 600;
+}
+
+.arrow{
+    height: 80%;
+    width: auto;
+    float: right;
+
+margin-top: 1%;
+margin-right: 10px;
+}
+
+.bb{
+    height: 80%;
+    width: auto;
+    margin: auto;
+}
+a {
+    color: orange;
+    transition: 0.2s;
+}
+a:hover {
+    color: red;
+}
+
+.card{
+    border-radius: 2px;
+    text-align: center;
+}

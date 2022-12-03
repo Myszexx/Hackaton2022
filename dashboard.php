@@ -34,9 +34,10 @@ else
 <body>
     <header>
         <span id="logo">WLM</span>
-        <span>Moje Finanse</span>
-        <span>Mój Harmonogram</span>
-        <span>Wyloguj się</span>
+        <a href="accounts/logout.php"><span>Wyloguj się</span></a>
+        <a href="modules/fin/finanse.php"><span>Moje Finanse</span></a>
+        <a href="modules/harm/harmonogram.html"><span>Mój Harmonogram</span></a>
+
     </header>
     <header style="display:none;">
         <button class="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened')); flyOutMenu()" aria-label="Main Menu">
@@ -59,38 +60,38 @@ else
     <div id="mainGrid">
         <div>
             <div class="small_grid">
-                <div class="lu">                Tutaj będzie napis</div>
+                <div class="lu">Twoje zadania<br><h3>Najbliższe zadanie</h3></div>
                 <div class="ru"  onclick="ChangeDiv('addTaskPanel', 'block')"></div>
-                <div class="do"></div>
+                <div class="do"><h3>Przejdź do zadań</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
 
             </div>
         </div>
         <div>
         <div class="small_grid">
-                <div class="lu">                Tutaj będzie napis</div>
-                <div class="ru" onclick="ChangeDiv('insertTaskPanel', 'block')"></div>
-                <div class="do"></div>
+                <div class="lu">Twoje przedziały<br><h3>Najbliższy czas</h3></div>
+                <div class="ru" onclick="ChangeDiv('insertTaskPanel', 'block')"><img class="bb" src="gfx/addTask.png"></div>
+                <div class="do"><h3>Przejdź do zadań</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
 
             </div>
         </div>
         <div>
             <div class="small_grid">
-                    <div class="lu">                Tutaj będzie napis</div>
+                    <div class="lu">                <?php echo $data['login']; ?><br><h3><?php echo $data['mail']; ?></h3></div>
                     <div class="ru"></div>
                     <div class="do"></div>
             <!--<div class="w2">
                 <img style="margin-left: 1%; margin-top: 2.5%; height: 90%; border-radius: 10px; float: left" src="./gfx/defaultUsr_Icon.png">
-                <h2 style="text-align: center;"><?php echo $data['login']; ?></h2>
-                <h3 style="text-align: center;"><?php echo $data['mail']; ?></h3>
+                <h2 style="text-align: center;"></h2>
+                <h3 style="text-align: center;"></h3>
                 <h3 style="text-align: center;"><?php echo $data['start_date']; ?></h3>
                 <span><a href="#"><h4 style="text-align: center;" >Zmień hasło</h4></a></span>-->
             </div>
         </div>
         <div class="menu_card">
                         <div class="small_grid">
-                <div class="lu">                Tutaj będzie napis</div>
+                <div class="lu">                Moje Finanse<br><h3>Moje saldo</h3></div>
                 <div class="ru" ></div>
-                <div class="do"></div>
+                <div class="do"><h3>Przejdź do finansów</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
 
             </div>
         </div>
