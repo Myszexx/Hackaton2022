@@ -41,7 +41,8 @@ function snackbarPopup(message)
 
 function getFormData()
 {
-    let arr=[['time',document.getElementById("time").value],
+    let arr=[['request_type','taskPost'],
+    ['time',document.getElementById("time").value],
     ['type', document.getElementById("type").value],
     ['title', document.getElementById("title").value],
     ['priority', document.getElementById("priority").value],
@@ -49,7 +50,7 @@ function getFormData()
     ['colors', document.getElementById("colors").value],
     ['comment', document.getElementById("comment").value]];
     console.log(arr);
-    fetchdata('/hackaton2022/api/tasksPost.php', 'POST', arr);
+    fetchdata('/hack/api/tasksPost.php', 'POST', arr);
 }
 
 function ChangeDiv(div_id,status)
@@ -60,7 +61,7 @@ function ChangeDiv(div_id,status)
 function fetchdata(url,method='POST', variables=null){
     
 
-        if (variables != null){
+        if (variables != null && variables[0][1]=='variables'){
         let formData = new FormData();
         variables.forEach(element => formData.append(element[0],element[1]));
 
@@ -87,6 +88,20 @@ function fetchdata(url,method='POST', variables=null){
             });
         });
     }
+    else if(variables != null){
+        let formData = new FormData();
+        variables.forEach(element => formData.append(element[0],element[1]));
+
+        fetch(url,{method: method, body: formData})
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (body) {
+            //return JSON.parse(body);
+            //return body;
+            console.log(body);
+        });
+    }
     else{
         fetch(url)
         .then(function (response) {
@@ -107,7 +122,7 @@ function Test(){
 function generateHarmo(range, startdate){
     gstring1=range;
     gstring2=startdate;
-    fetchdata('/hack/api/harmonogramGet.php','POST',[['type','harmonogram'],['length',range],['startday',startdate]]);
+    fetchdata('/hack/api/harmonogramGet.php','POST',[['request_type','harmonogram'],['length',range],['startday',startdate]]);
     //fetchdata('/hack/modules/harmo.json','POST');
 }
 function genTimes(id,daynum,start,end,type){
