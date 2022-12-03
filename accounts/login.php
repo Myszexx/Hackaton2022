@@ -34,3 +34,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
         echo "Takie konto już istnieje";
     }
 }
+else
+{
+    echo "Pola nie mogą być puste";
+}
