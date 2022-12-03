@@ -30,11 +30,11 @@ if(isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password
 
             if($res)
             {
-                echo "Konto zostało utworzone";
+                header('location: ../login.html');
             }
             else
             {
-                echo 'Wystąpił błąd';
+                echo 'Hasła są różne';
             }
         }
     }
