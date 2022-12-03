@@ -25,6 +25,8 @@ header
     width: 30%;
 
     background-color: orangered;
+
+    transition: 0,5s;
 }
 
 .menuPos

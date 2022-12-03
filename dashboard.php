@@ -1,5 +1,22 @@
 <?php session_start();
-if(empty($_SESSION))
+if(!empty($_SESSION))
+{
+    require_once "./accounts/connection.php";
+
+    $data = [];
+
+    $sql = "SELECT `login`, `mail`, `start_date` FROM users WHERE user_id = " . $_SESSION['user_id'];
+
+    $res = $conn -> query($sql);
+
+    while($row = $res -> fetch_assoc())
+    {
+        $data['login'] = $row['login'];
+        $data['mail'] = $row['mail'];
+        $data['start_date'] = $row['start_date'];
+    }
+}
+else
 {
     header('location: index.php');
 }
@@ -46,10 +63,10 @@ if(empty($_SESSION))
         <div onclick="ChangeDiv('insertTaskPanel', 'block')"><img class="icon" src="./gfx/addTime_button.png"></div>
         <div class="w2">
             <img style="height: 100%; border-radius: 10px; float: left" src="./gfx/defaultUsr_Icon.png">
-            <h2 style="text-align: center;">{Login}</h2>
-            <h3 style="text-align: center;">{Mail}</h3>
-            <h3 style="text-align: center;">{Start_date}</h3>
-            <span><a href="123"><h4 style="text-align: center;" >Zmień hasło</h4></a></span>
+            <h2 style="text-align: center;"><?php echo $data['login']; ?></h2>
+            <h3 style="text-align: center;"><?php echo $data['mail']; ?></h3>
+            <h3 style="text-align: center;"><?php echo $data['start_date']; ?></h3>
+            <span><a href="#"><h4 style="text-align: center;" >Zmień hasło</h4></a></span>
         </div>
         <div>
         </div>

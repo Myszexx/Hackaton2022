@@ -17,8 +17,6 @@ if(isset($_SESSION['user_id']))
         $data['login'] = $row['login'];
         $data['mail'] = $row['mail'];
         $data['start_date'] = $row['start_date'];
-
-        echo json_encode($data);
     }
 }
 else
