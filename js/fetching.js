@@ -27,6 +27,7 @@ function snackbarPopup(message)
 
 function getFormData()
 {
+    console.log(document.getElementById("alerts").value);
     let arr=[['request_type','taskPost'],
     ['time',document.getElementById("time").value],
     ['type', document.getElementById("type").value],
