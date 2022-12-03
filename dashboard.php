@@ -62,7 +62,7 @@ else
             <div class="small_grid">
                 <div class="lu">Twoje zadania<br><h3>Najbliższe zadanie</h3></div>
                 <div class="ru"  onclick="ChangeDiv('addTaskPanel', 'block')"></div>
-                <div class="do"><h3>Przejdź do zadań</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
+                <div class="do"><h3>Zadania</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
 
             </div>
         </div>
@@ -70,7 +70,7 @@ else
         <div class="small_grid">
                 <div class="lu">Twoje przedziały<br><h3>Najbliższy czas</h3></div>
                 <div class="ru" onclick="ChangeDiv('insertTaskPanel', 'block')"><img class="bb" src="gfx/addTask.png"></div>
-                <div class="do"><h3>Przejdź do zadań</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
+                <div class="do"><h3>Przedziały</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
 
             </div>
         </div>
@@ -91,7 +91,7 @@ else
                         <div class="small_grid">
                 <div class="lu">                Moje Finanse<br><h3>Moje saldo</h3></div>
                 <div class="ru" ></div>
-                <div class="do"><h3>Przejdź do finansów</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
+                <div class="do"><h3>Finanse</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
 
             </div>
         </div>
@@ -100,44 +100,44 @@ else
     </div>
     </main>
     <div id="addTaskPanel">
-            <button id="closeButton_1" onclick="ChangeDiv('addTaskPanel', 'none')">X</button>
+            <button id="closeButton_1" class="x"  onclick="ChangeDiv('addTaskPanel', 'none')">X</button>
             <label for="time">Time:</label>
-            <input type="number" id="time" name="time"><br><br>
+            <input type="number" id="time" name="time"><br>
             <label for="type">Type:</label>
-            <input type="number" id="type" name="type"><br><br>
+            <input type="number" id="type" name="type"><br>
             <label for="title">Title:</label>
-            <input type="text" id="title" name="title"><br><br>
+            <input type="text" id="title" name="title"><br>
             <label for="priority">Priority:</label>
-            <input type="number" id="priority" name="priority"><br><br>
+            <input type="number" id="priority" name="priority"><br>
             <label for="type">Typ:</label>
             <select name="type" id="type">
                 <option value=1>Praca</option>
                 <option value=2>Życie prywatne</option>
             </select>
-            <br><br>
+            <br>
             <label for="alerts">Deadline:</label>
-            <input type="date" id="alerts" name="alerts"><br><br>
+            <input type="date" id="alerts" name="alerts"><br>
             <label for="colors">Colors:</label>
-            <input type="color" id="colors" name="colors"><br><br>
+            <input type="color" id="colors" name="colors"><br>
             <label for="comment">Comment:</label><br>
-            <textarea rows="5" cols="30" id="comment" name="comment"></textarea><br><br>
+            <textarea rows="5" cols="30" id="comment" name="comment"></textarea><br>
             <button onclick="getFormData(); ChangeDiv('addTaskPanel', 'none')">Wprowadź</button>
     </div>
 
     <div id="insertTaskPanel">
-        <button id="closeButton_2" onclick="ChangeDiv('insertTaskPanel', 'none')">X</button>
+        <button id="closeButton_2" class="x" onclick="ChangeDiv('insertTaskPanel', 'none')">X</button>
         <label for="date">Dzień:</label>
-        <input type="date" id="date" name="date"><br><br>
+        <input type="date" id="date" name="date"><br>
         <label for="time_start">Godzina początkowa:</label>
-        <input type="time" id="time_start" name="time_start"><br><br>
+        <input type="time" id="time_start" name="time_start"><br>
         <label for="time_end">Godzina końcowa:</label>
-        <input type="time" id="time_end" name="time_end"><br><br>
+        <input type="time" id="time_end" name="time_end"><br>
         <label for="type">Typ:</label>
         <select name="type" id="type">
             <option value=1>Praca</option>
             <option value=2>Życie prywatne</option>
         </select>
-        <br><br>
+        <br>
         <button onclick="getFormData(); ChangeDiv('insertTaskPanel', 'none')">Wprowadź</button>
     </div>
 

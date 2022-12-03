@@ -97,7 +97,7 @@ main{
 {
     display: none;
     position: absolute;
-
+    
     left: 35%;
     top: 10%;
 
@@ -106,6 +106,14 @@ main{
 
     background-color: rgba(200, 200, 200, 0.7);
 
+}
+#addTaskPanel>*{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+#insertTaskPanel>*{
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
 #insertTaskPanel
@@ -269,4 +277,8 @@ margin-right: 10px;
     height: 80%;
     width: auto;
     margin: auto;
+}
+
+.x{
+
 }
