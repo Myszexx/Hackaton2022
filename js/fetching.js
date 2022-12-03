@@ -27,7 +27,7 @@ function Test(){
 }
 
 function generateHarmo(range, startdate){
-    //fetchdata('./harmonogram.php','POST',[['type','harmonogram'],['length',range],['startday',startdate]]);
+    //fetchdata('./harmonogramGet.php','POST',[['type','harmonogram'],['length',range],['startday',startdate]]);
     fetchdata('./harmo.json','POST');
 
 }
