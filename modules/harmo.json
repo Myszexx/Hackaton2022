@@ -5,7 +5,7 @@
         {"task_id":3,"time":10,"type":1,"comment":"To jest krotki task","title":"To tytuł2","priority":1,"alerts":"2022-12-06","colors":"#00FF00"}
     ],
     "time":[
-        {"id":1,"start_date":"2022-12-04T10:45:00","end_date":"2022-12-04T10:45:00","type":1},
+        {"id":1,"start_date":"2022-12-04T10:45:00","end_date":"2022-12-04T11:00:00","type":1},
         {"id":2,"start_date":"2022-12-04T11:10:00","end_date":"2022-12-04T12:00:00","type":2}
     ]
 }
