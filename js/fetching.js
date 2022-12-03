@@ -1,6 +1,16 @@
-function showDiv()
+let gstrin1;
+let gstrin2;
+let gstrin3;
+let gstrin4;
+let gnum1;
+let gnum2;
+let gnum3;
+
+
+
+function showDiv(div_id)
 {
-    
+    document.getElementById(div_id).style.display='block';
 }
 
 function fetchdata(url,method='POST', variables=null){
@@ -24,6 +34,7 @@ function fetchdata(url,method='POST', variables=null){
         .then(function (body) {
             //return JSON.parse(body);
             console.log(JSON.parse(body).time);
+            let daynum=Date.parse(bodu=y)
             JSON.parse(body).time.forEach((repo)=>{
                 console.log(`Jeste tu`);
                 genTimes(repo.id,daynum,start,end,type);
@@ -49,6 +60,8 @@ function Test(){
 }
 
 function generateHarmo(range, startdate){
+    gstring1=range;
+    gstring2=startdate;
     fetchdata('./api/harmonogram.php','POST',[['type','harmonogram'],['length',range],['startday',startdate]]);
     //fetchdata('modules/harmo.json','POST');
 }
