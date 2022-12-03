@@ -21,8 +21,8 @@ if(isset($_POST['username']) && isset($_POST['password']))
 
         if($log['login'] == $username && $log['passwd'] == $password)
         {
-            $_SESSION['username'] = $log['user_id'];
-            header('Location: ../dashboard.html');
+            $_SESSION['user_id'] = $log['user_id'];
+            header('Location: ../dashboard.php');
         }
         else
         {
