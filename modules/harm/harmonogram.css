@@ -67,18 +67,27 @@ header
     grid-column-gap: 2px;
     grid-row-gap: 0px;
 }
-#mainGrid:nth-child(48n+1),
-#mainGrid:nth-child(48n+2),
-#mainGrid:nth-child(48n+3),
-#mainGrid:nth-child(48n+4){
+#mainGrid>div:nth-child(8n+1),
+#mainGrid>div:nth-child(8n+2),
+#mainGrid>div:nth-child(8n+3),
+#mainGrid>div:nth-child(8n+4){
+    border-top: 0.1px solid rgba(59, 59, 59, 0.274);
+}
+
+
+#mainGrid>div:nth-child(48n+1),
+#mainGrid>div:nth-child(48n+2),
+#mainGrid>div:nth-child(48n+3),
+#mainGrid>div:nth-child(48n+4){
     border-top: 0.5px solid black;
 }
 
-#mainGrid:nth-child(96n-1),
-#mainGrid:nth-child(96n-2),
-#mainGrid:nth-child(96n-3),
-#mainGrid:nth-child(96n-4){
-    border-bottom: 0.5px solid black;
+#mainGrid>div:nth-child(4n+1),
+#mainGrid>div:nth-child(4n+2),
+#mainGrid>div:nth-child(4n+3),
+#mainGrid>div:nth-child(4n+4){
+
+    border-right: 0.5px solid black;
 }
 
 
