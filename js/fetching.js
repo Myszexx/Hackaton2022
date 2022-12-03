@@ -97,11 +97,13 @@ function genTimes(id,daynum,start,end,type){
     console.log('Pole: ' + end);
     bcg.style.cssText =`grid-column: `+daynum+`/ span  1;
                         grid-row: `+start+` / `+ end + `;
-                        background-color:rgba(100,30,30,0.3);`;
+                        background-color:rgba(100,30,30,0.3);
+                        z-index: 100;`;
+    gnum1+=end-start;
     bcg.addEventListener('click', function() {
         location.href = 'details.php?type=time&id='+id
     }, false);
-    document.getElementById('mainGrid').appendChild(bcg);
+    document.getElementById('upGrid').appendChild(bcg);
 }
 function cardGen(id,daynum,start,end,type,color,comment,title,deadline,color){
 
