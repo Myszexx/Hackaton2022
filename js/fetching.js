@@ -6,6 +6,22 @@ let gnum1;
 let gnum2;
 let gnum3;
 
+function snackbarPopup(message)
+{
+    var div= document.createElement("div");        
+    div.innerHTML = "<div>"+ message +"</div>"; 
+    div.style.visibility = "hidden";
+    div.style.color = "#fff";
+    div.style.backgroundColor = 'black';
+    div.style.textAlign = "center";
+    div.style.position = "fixed";
+    div.style.bottom = "40px";
+    div.style.fontSize = "20px";
+    div.style.left = "50%";
+    div.style.borderRadius = "2px";
+    objTo.appendChild(divtest);
+}
+
 function getFormData()
 {
     let arr=[['time',document.getElementById("time").value],
