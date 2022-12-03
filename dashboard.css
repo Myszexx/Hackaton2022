@@ -161,3 +161,15 @@ header
     stroke-dashoffset: -134;
     stroke-width: 6;
 }
+
+.logOutButton{
+    position: relative;
+
+    float: right;
+
+    top: -50px;
+    right: 15px;
+
+    height: 50px;
+    width: 5%;
+}

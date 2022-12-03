@@ -8,7 +8,9 @@ $task = [];
 
 require_once "../accounts/connection.php";
 
-if (isset($_POST['length']) && isset($_POST['startday']) && isset($_SESSION['user_id'])) {
+if(isset($_POST['length']) && isset($_POST['startday']) && isset($_SESSION['user_id']))
+{
+    $i = 0;
     $length = $_POST['length'];
     $startday = $_POST['startday'];
 
@@ -21,19 +23,21 @@ if (isset($_POST['length']) && isset($_POST['startday']) && isset($_SESSION['use
     $res1_num_rows = $res1->num_rows;
     $res2_num_rows = $res2->num_rows;
 
-    $res1 = $res1->fetch_assoc();
-    $res2 = $res2->fetch_assoc();
-
-    for ($i = 0; $i < $res1_num_rows; $i++) {
+    while($row = $res1 -> fetch_assoc())
+    {
         $time[$i] = [
             "id" => $res1['id'],
             "start_date" => $res1['start_date'],
             "end_date" => $res1['end_date'],
             "type" => $res1['type']
         ];
+
+        $i++;
     }
 
-    for ($i = 0; $i < $res2_num_rows; $i++) {
+    $i = 0;
+    while($row = $res2 -> fetch_assoc())
+    {
         $task[$i] = [
             "task_id" => $res2['task_id'],
             "time" => $res2['time'],
@@ -44,6 +48,8 @@ if (isset($_POST['length']) && isset($_POST['startday']) && isset($_SESSION['use
             "alerts" => $res2['alerts'],
             "colors" => $res2['colors']
         ];
+
+        $i++;
     }
 
 
