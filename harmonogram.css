@@ -1,0 +1,72 @@
+body
+{
+    background-color: gray;
+    margin: 0px;
+}
+
+header
+{
+    position: sticky;
+
+    background-color: orange;
+    height: 50px;
+}
+
+#menu
+{
+    position: relative;
+
+    left: -31%;
+
+    padding-right: 2px;
+
+    position: absolute;
+    height: 400px;
+    width: 30%;
+
+    background-color: orangered;
+}
+
+.menuPos
+{
+    display: block;
+
+    border: 1px black solid;
+
+    width: 100%;
+
+    margin: 0 auto;
+    background-color: orange;
+}
+
+#mainGrid
+{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    overflow: scroll;
+
+    grid-column-gap: 2px;
+    grid-row-gap: 0px;
+
+    height: 88vh;
+    width: 80vw;
+
+    grid-template-rows: repeat(288, 10px);
+
+    padding-top: 20px;
+}
+
+#mainGrid>div:nth-child(8n+1),
+#mainGrid>div:nth-child(8n+2),
+#mainGrid>div:nth-child(8n+3),
+#mainGrid>div:nth-child(8n+4){
+    background-color: black;
+}
+
+#mainGrid > div
+{
+    height: 10px;
+    background-color: orange;
+}
