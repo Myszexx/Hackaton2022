@@ -6,6 +6,20 @@ let gnum1;
 let gnum2;
 let gnum3;
 
+function flyOutMenu()
+{
+    let panel = document.getElementById("menu");
+
+    if(panel.style.left == "0%")
+    {
+        panel.style.left = "-31%";
+    }
+    else
+    {
+        panel.style.left = "0%";
+    }
+}
+
 function snackbarPopup(message)
 {
     var div= document.createElement("div");        
