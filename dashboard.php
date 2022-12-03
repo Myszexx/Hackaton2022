@@ -108,10 +108,7 @@ else
             <label for="priority">Priorytet:</label>
             <input type="number" id="priority" name="priority"><br>
             <label for="type">Typ:</label>
-            <select name="type" id="type">
-                <option value=1>Praca</option>
-                <option value=2>Życie prywatne</option>
-            </select>
+            <input type="number" id="type" name="type"><br>
             <br>
             <label for="alerts">Deadline:</label>
             <input type="date" id="alerts" name="alerts"><br>
