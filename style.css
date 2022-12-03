@@ -14,7 +14,7 @@ body{
     min-width: 400px;
 
     width: 30vw;
-    height: 40vh;
+    height: 50vh;
     margin: 10vw auto;
 
     border-radius: 20px;
@@ -24,7 +24,7 @@ body{
 
 #loginTitle
 {
-    position: inline-block;
+    position: relative;
 
     margin: 5%;
 
@@ -84,4 +84,12 @@ body{
 {
     background-color: gray;
     color: #ccc;
+}
+
+a {
+    color: orange;
+    transition: 0.2s;
+}
+a:hover {
+    color: red;
 }
