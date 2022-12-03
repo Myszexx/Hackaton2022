@@ -62,7 +62,7 @@ function ChangeDiv(div_id,status)
 function fetchdata(url,method='POST', variables=null){
     
 
-        if (variables != null && variables[0][1]=='variables'){
+        if (variables != null && variables[0][1]=='harmonogram'){
         let formData = new FormData();
         variables.forEach(element => formData.append(element[0],element[1]));
 
@@ -73,20 +73,45 @@ function fetchdata(url,method='POST', variables=null){
         .then(function (body){
             //return JSON.parse(body);
             let time_arr=[[],[],[],[]]
-            console.log(body)
+            //console.log(body)
             console.log(JSON.parse(body).time.start_date);
             console.log('Data' + gstring2);
+            CardsDestroyer();
+            let time_fake_obj=[]
             JSON.parse(body).time.forEach((repo)=>{
                 let daynum=Math.floor((Date.parse(repo.start_date)-Date.parse(gstring2))/ (24*60*60*1000));
                 console.log('day' + daynum + ' s ' + Date.parse(repo.start_date));
+                
                 let smal_arr = genTimes(repo.id,daynum,repo.start_date,repo.end_date,repo.type);
+                //console.log("To maly array: " + smal_arr)
+                //let valid_arr = smal_arr.split(",")
                 time_arr[daynum].push(smal_arr);
                 setTimeout(100);
-
+                time_fake_obj = genFakeObj(time_arr);
             });
+                let tasksObj=[]
             JSON.parse(body).tasks.forEach((repo)=>{
-
+                //console.log(repo)
+                i=0;
+                let tmp_arr = []
+                while(time_fake_obj[i]!=undefined){
+                    if(time_fake_obj[i][3]>=(repo.time/5) && time_fake_obj[i][4]==repo.type){
+                        console.table(time_fake_obj)
+                        let dayn = time_fake_obj[i][0]
+                        let start_pos = time_fake_obj[i][1];
+                        let len = time_fake_obj[i][2];
+                        let free_len = time_fake_obj[i][3]
+                        tmp_arr =[dayn,start_pos+len-free_len,repo.time/5,repo.alerts,repo.colors,repo.comment,repo.priority,repo.task_id,repo.title,repo.type];
+                        time_fake_obj[i][3]-=(repo.time/5);
+                        break;
+                    }
+                    else{
+                        i++;
+                    }
+                }
+                tasksObj.push(tmp_arr);
             });
+            cardGen(tasksObj)
         });
     }
     else if(variables != null){
@@ -145,22 +170,41 @@ function genTimes(id,daynum,start,end,type){
     bcg.style.cssText =`grid-column: `+(daynum+1)+`/ span  1;
                         grid-row: `+start+` / `+ end + `;
                         background-color:rgba(100,30,30,0.3);
-                        z-index: 100;`;
+                        z-index: 10;`;
     gnum1+=end-start;
     bcg.addEventListener('click', function() {
         location.href = 'details.php?type=time&id='+id
     }, false);
     document.getElementById('upGrid').appendChild(bcg);
-    console.log(arr);
-    return arr;
+    //console.log(arr[0]);
+    return arr[0];
 }
-function cardGen(id,daynum,start,end,type,color,comment,title,deadline,color){
-
+function cardGen(arrr){
+    //console.log(arrr);
+    arrr.forEach(arr=>{
+        //console.table(arr.length);
+        if(arr.length>0){
+            let bcg = document.createElement('div')
+            bcg.setAttribute('class','card');
+            bcg.setAttribute('id','tt'+arr[0]);
+            bcg.style.cssText =`grid-column: `+(arr[0]+1)+`/ span  1;
+                            grid-row: `+arr[1]+` / span `+ arr[2] + `;
+                            background-color:rgba(100,255,30,0.6);
+                            z-index: 100;
+                            width: 80%;
+                            border:1px black solid;`
+                            ;
+            document.getElementById('upGrid').appendChild(bcg);
+            console.log("Poszlo");
+        }
+    })
+    
 }
 function GetHarmo(){
     
     generateHarmo(document.getElementById('leng').value,document.getElementById('starting').value)
 }
+
 function DivFill(){
     let i =0;
     while( i<288*4){
@@ -168,5 +212,29 @@ function DivFill(){
     d.setAttribute('Id','D'+i)
     document.getElementById('mainGrid').appendChild(d)
     i++;
+    }
 }
+
+
+function CardsDestroyer(){
+    const boxes = document.querySelectorAll('.card');
+
+boxes.forEach(box => {
+  box.remove();
+});
+}
+
+
+function genFakeObj(arr){
+    console.table(arr);
+    let finalarray=[]
+    for(let i=0;i<4;i++){
+        arr[i].forEach(time=>{
+            console.log('Start: '+ time[0] + " End: " + time[1])
+            let len = time[1]-time[0];
+            let type = time[2]
+            finalarray.push([i,time[0],len,len,type])
+        })
+    }
+    return finalarray;
 }
