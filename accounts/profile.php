@@ -18,3 +18,8 @@ else
 {
     header('location: ../index.php');
 }
+
+function defSettings()
+{
+    $sql = "INSERT INTO settings (setting_id, user_id, setting_name, setting_value) VALUES (''," . $_SESSION['user_id'] . ", )";
+}
