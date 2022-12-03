@@ -73,10 +73,12 @@ if(empty($_SESSION))
 
     <div id="insertTaskPanel">
         <button id="closeButton_2" onclick="ChangeDiv('insertTaskPanel', 'none')">X</button>
-        <label for="start_date">Godzina początkowa:</label>
-        <input type="time" id="start_date" name="start_date"><br><br>
-        <label for="end_date">Godzina końcowa:</label>
-        <input type="time" id="end_date" name="end_date"><br><br>
+        <label for="date">Dzień:</label>
+        <input type="date" id="date" name="date"><br><br>
+        <label for="time_start">Godzina początkowa:</label>
+        <input type="time" id="time_start" name="time_start"><br><br>
+        <label for="time_end">Godzina końcowa:</label>
+        <input type="time" id="time_end" name="time_end"><br><br>
         <label for="type">Typ:</label>
         <select name="type" id="type">
             <option value="Praca">Praca</option>
