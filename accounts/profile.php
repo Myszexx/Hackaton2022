@@ -2,6 +2,8 @@
 session_start();
 header('Content-Type: application/json');
 
+$data = [];
+
 require_once "connection.php";
 
 if(isset($_SESSION['user_id']))
@@ -12,10 +14,12 @@ if(isset($_SESSION['user_id']))
 
     while($row = $res -> fetch_assoc())
     {
-        $
-    }
+        $data['login'] = $row['login'];
+        $data['mail'] = $row['mail'];
+        $data['start_date'] = $row['start_date'];
 
-    echo json_encode($res);
+        echo json_encode($data);
+    }
 }
 else
 {
