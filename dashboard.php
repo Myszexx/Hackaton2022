@@ -66,6 +66,9 @@ else
             <h2 style="text-align: center;"><?php echo $data['login']; ?></h2>
             <h3 style="text-align: center;"><?php echo $data['mail']; ?></h3>
             <h3 style="text-align: center;"><?php echo $data['start_date']; ?></h3>
+            <h2 style="text-align: center;">{Login}</h2>
+            <h3 style="text-align: center;">{Mail}</h3>
+            <h3 style="text-align: center;">{Start_date}</h3>
             <span><a href="#"><h4 style="text-align: center;" >Zmień hasło</h4></a></span>
         </div>
         <div>
