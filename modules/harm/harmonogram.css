@@ -39,29 +39,41 @@ header
     background-color: orange;
 }
 
-#mainGrid
-{
+#bb{
     display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-    overflow: scroll;
-
-    grid-column-gap: 2px;
-    grid-row-gap: 0px;
-
+    grid-template-columns: 10% 90%;
     height: 88vh;
     width: 80vw;
-
-    grid-template-rows: repeat(288, 10px);
-
+    overflow: scroll;
     padding-top: 20px;
 }
 
-#mainGrid>div:nth-child(8n+1),
-#mainGrid>div:nth-child(8n+2),
-#mainGrid>div:nth-child(8n+3),
-#mainGrid>div:nth-child(8n+4){
+#hours{
+    display: grid;
+    grid-template-rows: repeat(24, 120px);
+    background-color: azure;
+
+}
+
+#hours>div:nth-child(2n+1){
+    background-color: rgb(126, 126, 65);
+}
+
+#mainGrid
+{
+    display: grid;
+    grid-template-columns:repeat(4, minmax(200px, 1fr));
+
+    grid-column-gap: 2px;
+    grid-row-gap: 0px;
+    grid-template-rows: repeat(288, 10px);
+
+}
+
+#mainGrid>div:nth-child(48n+1),
+#mainGrid>div:nth-child(48n+2),
+#mainGrid>div:nth-child(48n+3),
+#mainGrid>div:nth-child(48n+4){
     background-color: black;
 }
 
