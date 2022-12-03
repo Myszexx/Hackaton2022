@@ -22,10 +22,10 @@ if(empty($_SESSION))
             </svg>
         </button>
 
-        <form action="/accounts/logout.php">
-        <button class="logOutButton">
-            Logout
-        </button>
+        <form action="./accounts/logout.php">
+            <button class="logOutButton">
+                Logout
+            </button>
         </form>
     </header>
 
