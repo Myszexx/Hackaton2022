@@ -26,10 +26,10 @@ if(isset($_POST['length']) && isset($_POST['startday']) && isset($_SESSION['user
     while($row = $res1 -> fetch_assoc())
     {
         $time[$i] = [
-            "id" => $res1['id'],
-            "start_date" => $res1['start_date'],
-            "end_date" => $res1['end_date'],
-            "type" => $res1['type']
+            "id" => $row['id'],
+            "start_date" => $row['start_date'],
+            "end_date" => $row['end_date'],
+            "type" => $row['type']
         ];
 
         $i++;
@@ -39,14 +39,14 @@ if(isset($_POST['length']) && isset($_POST['startday']) && isset($_SESSION['user
     while($row = $res2 -> fetch_assoc())
     {
         $task[$i] = [
-            "task_id" => $res2['task_id'],
-            "time" => $res2['time'],
-            "type" => $res2['type'],
-            "comment" => $res2['comment'],
-            "title" => $res2['title'],
-            "priority" => $res2['priority'],
-            "alerts" => $res2['alerts'],
-            "colors" => $res2['colors']
+            "task_id" => $row['task_id'],
+            "time" => $row['time'],
+            "type" => $row['type'],
+            "comment" => $row['comment'],
+            "title" => $row['title'],
+            "priority" => $row['priority'],
+            "alerts" => $row['alerts'],
+            "colors" => $row['colors']
         ];
 
         $i++;
