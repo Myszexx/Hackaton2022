@@ -21,22 +21,42 @@ header
     padding-right: 2px;
 
     position: absolute;
-    height: 400px;
     width: 30%;
 
-    background-color: orangered;
+    background-color: rgba(0, 0, 0, 0.394);
 }
 
 .menuPos
 {
     display: block;
-
-    border: 1px black solid;
-
+    
+    height: 5vh;
     width: 100%;
 
     margin: 0 auto;
-    background-color: orange;
+
+
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.menuPos:hover
+{
+    display: block;
+    
+    height: 5vh;
+    width: 100%;
+
+    margin: 0 auto;
+
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+
+    background-color: rgb(0, 0, 0);
 }
 
 #mainGrid

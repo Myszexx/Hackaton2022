@@ -31,13 +31,13 @@ if(empty($_SESSION))
 
     <div id="menu" style="z-index: 10;">
         <div class="menuPos">
-            <p>Test 1<p>
+            Test 1
         </div>
         <div class="menuPos">
-            <p>Test 2<p>
+            Test 2
         </div>
         <div class="menuPos">
-            <p>Test 3<p>
+            Test 3
         </div>
     </div>
 
