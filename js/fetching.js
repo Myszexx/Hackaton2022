@@ -6,6 +6,22 @@ let gnum1;
 let gnum2;
 let gnum3;
 
+function snackbarPopup(message)
+{
+    var div= document.createElement("div");        
+    div.innerHTML = "<div>"+ message +"</div>"; 
+    div.style.visibility = "hidden";
+    div.style.color = "#fff";
+    div.style.backgroundColor = 'black';
+    div.style.textAlign = "center";
+    div.style.position = "fixed";
+    div.style.bottom = "40px";
+    div.style.fontSize = "20px";
+    div.style.left = "50%";
+    div.style.borderRadius = "2px";
+    objTo.appendChild(divtest);
+}
+
 function getFormData()
 {
     let arr=[['time',document.getElementById("time").value],
@@ -19,9 +35,9 @@ function getFormData()
     fetchdata('/hackaton2022/api/tasksPost.php', 'POST', arr);
 }
 
-function showDiv(div_id)
+function ChangeDiv(div_id,status)
 {
-    document.getElementById(div_id).style.display='block';
+    document.getElementById(div_id).style.display=status;
 }
 
 function fetchdata(url,method='POST', variables=null){
@@ -97,11 +113,13 @@ function genTimes(id,daynum,start,end,type){
     console.log('Pole: ' + end);
     bcg.style.cssText =`grid-column: `+daynum+`/ span  1;
                         grid-row: `+start+` / `+ end + `;
-                        background-color:rgba(100,30,30,0.3);`;
+                        background-color:rgba(100,30,30,0.3);
+                        z-index: 100;`;
+    gnum1+=end-start;
     bcg.addEventListener('click', function() {
         location.href = 'details.php?type=time&id='+id
     }, false);
-    document.getElementById('mainGrid').appendChild(bcg);
+    document.getElementById('upGrid').appendChild(bcg);
 }
 function cardGen(id,daynum,start,end,type,color,comment,title,deadline,color){
 

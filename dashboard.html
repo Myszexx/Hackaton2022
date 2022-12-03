@@ -30,7 +30,7 @@
     </div>
 
     <div id="mainGrid">
-        <div onclick="showDiv('addTaskPanel')">Dodaj se kurwa taska
+        <div onclick="changeDiv('addTaskPanel', 'none')">Dodaj se kurwa taska
         </div>
         <div>
         </div>
@@ -59,6 +59,8 @@
             <textarea rows="5" cols="80" id="comment" name="comment"></textarea><br><br>
             <button onclick="getFormData()"></button>
     </div>
+
+    <button onclick="snackbarPopup();"></button>
 
 </body>
 </html>
