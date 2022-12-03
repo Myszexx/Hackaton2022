@@ -276,9 +276,8 @@ margin-right: 10px;
 .bb{
     height: 80%;
     width: auto;
-    margin: auto;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
 }
 
-.x{
-
-}

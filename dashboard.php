@@ -61,7 +61,7 @@ else
         <div>
             <div class="small_grid">
                 <div class="lu">Twoje zadania<br><h3>Najbliższe zadanie</h3></div>
-                <div class="ru"  onclick="ChangeDiv('addTaskPanel', 'block')"></div>
+                <div class="ru"><a href="modules\harm\harmonogram.html"><img class="bb" src="gfx/addTime.png"></a></div>
                 <div class="do"><h3>Zadania</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
 
             </div>
@@ -69,7 +69,7 @@ else
         <div>
         <div class="small_grid">
                 <div class="lu">Twoje przedziały<br><h3>Najbliższy czas</h3></div>
-                <div class="ru" onclick="ChangeDiv('insertTaskPanel', 'block')"><img class="bb" src="gfx/addTask.png"></div>
+                <div class="ru" ><a href="modules\harm\harmonogram.html"><img class="bb" src="gfx/addTask.png"></a></div>
                 <div class="do"><h3>Przedziały</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
 
             </div>
@@ -77,7 +77,7 @@ else
         <div>
             <div class="small_grid">
                     <div class="lu">                <?php echo $data['login']; ?><br><h3><?php echo $data['mail']; ?></h3></div>
-                    <div class="ru"></div>
+                    <div class="ru"><img class="bb" src="gfx/pen.png"></div>
                     <div class="do"></div>
             <!--<div class="w2">
                 <img style="margin-left: 1%; margin-top: 2.5%; height: 90%; border-radius: 10px; float: left" src="./gfx/defaultUsr_Icon.png">
@@ -90,7 +90,7 @@ else
         <div class="menu_card">
                         <div class="small_grid">
                 <div class="lu">                Moje Finanse<br><h3>Moje saldo</h3></div>
-                <div class="ru" ></div>
+                <div class="ru" ><a href="modules\fin\finanse.html"><img class="bb" src="gfx/money_icon.png"></a></div>
                 <div class="do"><h3>Finanse</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
 
             </div>

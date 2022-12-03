@@ -220,6 +220,8 @@ span{
     float: left;
     clear: both;
     font-weight: 600;
+    text-decoration: none;
+    color: black;
 }
 
 .arrow{
