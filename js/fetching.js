@@ -16,7 +16,7 @@ function getFormData()
     ['colors', document.getElementById("colors").value],
     ['comment', document.getElementById("comment").value]];
     console.log(arr);
-    fetchdata('Hackaton2022/api/tasksPost.php', 'POST', arr);
+    fetchdata('/hackaton2022/api/tasksPost.php', 'POST', arr);
 }
 
 function showDiv(div_id)
@@ -31,6 +31,7 @@ function fetchdata(url,method='POST', variables=null){
 
         fetch(url,{method: method, body: formData})
         .then(function (response) {
+            //console.log(response.t())
             return response.text();
         })
         .then(function (body) {
