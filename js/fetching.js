@@ -185,7 +185,7 @@ function cardGen(arrr){
     arrr.forEach(arr=>{
         //console.table(arr.length);
         if(arr.length>0){
-            console.log(hexToRgbA('#'+arr[4]));
+            //console.log(hexToRgbA('#'+arr[4]));
             let bcg = document.createElement('div')
             bcg.setAttribute('class','card');
             bcg.setAttribute('id','tt'+arr[0]);
