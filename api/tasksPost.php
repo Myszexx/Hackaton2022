@@ -9,3 +9,7 @@ if (!empty($_POST))
 
     $res = $conn -> query($sql);
 }
+else
+{
+    echo "Brak danych w POST";
+}
