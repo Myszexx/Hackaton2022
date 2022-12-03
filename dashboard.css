@@ -41,13 +41,31 @@ header
 
 #mainGrid
 {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
+    padding-top: 20px;
 }
 
-.card
+#mainGrid > div
 {
-    width: 30%;
-    height: 40%;
+    height: 40vh;
 
     background-color: orange;
+}
+
+.w1
+{
+    grid-column: span 1;
+}
+
+.w2
+{
+    grid-column: span 2;
+}
+
+.w3
+{
+    grid-column: span 3;
 }
