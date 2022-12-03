@@ -17,7 +17,7 @@ function fetchdata(url,method='POST', variables=null){
             return response.text();
         })
         .then(function (body) {
-            console.log(body);
+            console.log(JSON.parse(body));
         });
     }
 }
@@ -27,6 +27,7 @@ function Test(){
 }
 
 function generateHarmo(range, startdate){
-    fetchdata('./harmonogram.php','POST',[['type','harmonogram'],['length',range],['startday',startdate]]);
-    
+    //fetchdata('./harmonogram.php','POST',[['type','harmonogram'],['length',range],['startday',startdate]]);
+    fetchdata('./harmo.json','POST');
+
 }
