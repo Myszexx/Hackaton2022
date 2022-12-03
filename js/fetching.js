@@ -73,7 +73,7 @@ function fetchdata(url,method='POST', variables=null){
         .then(function (body){
             //return JSON.parse(body);
             let time_arr=[[],[],[],[]]
-            //console.log(body)
+            console.log(body)
             console.log(JSON.parse(body).time.start_date);
             console.log('Data' + gstring2);
             CardsDestroyer();
@@ -184,6 +184,7 @@ function cardGen(arrr){
     arrr.forEach(arr=>{
         //console.table(arr.length);
         if(arr.length>0){
+            console.log(hexToRgbA('#'+arr[4]));
             let bcg = document.createElement('div')
             bcg.setAttribute('class','card');
             bcg.setAttribute('id','tt'+arr[0]);
@@ -193,7 +194,8 @@ function cardGen(arrr){
                             z-index: 100;
                             width: 80%;
                             border:1px black solid;`
-                            ;
+            bcg.innerHTML=arr[8]
+            
             document.getElementById('upGrid').appendChild(bcg);
             console.log("Poszlo");
         }
@@ -237,4 +239,18 @@ function genFakeObj(arr){
         })
     }
     return finalarray;
+}
+
+
+function hexToRgbA(hex){
+    var c;
+    if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+        c= hex.substring(1).split('');
+        if(c.length== 3){
+            c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+        }
+        c= '0x'+c.join('');
+        return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+',1)';
+    }
+    throw new Error('Bad Hex');
 }
