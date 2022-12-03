@@ -84,3 +84,13 @@ header
     background-color: rgba(200, 200, 200, 0.5);
 
 }
+
+#closeButton
+{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+
+    height: 5%;
+    width: 5%;
+}

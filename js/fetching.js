@@ -10,16 +10,19 @@ function snackbarPopup(message)
 {
     var div= document.createElement("div");        
     div.innerHTML = "<div>"+ message +"</div>"; 
-    div.style.visibility = "hidden";
+    div.style.visibility = "visible";
     div.style.color = "#fff";
-    div.style.backgroundColor = 'black';
+    div.style.backgroundColor = 'blue';
     div.style.textAlign = "center";
     div.style.position = "fixed";
-    div.style.bottom = "40px";
-    div.style.fontSize = "20px";
-    div.style.left = "50%";
+    div.style.top = "40px";
+    div.style.fontSize = "40px";
+    div.style.left = "30%";
+    div.style.right = "30%";
     div.style.borderRadius = "2px";
-    objTo.appendChild(divtest);
+    document.querySelector('body').appendChild(div);
+
+    setTimeout(function(){ div.style.visibility = div.style.visibility.replace("visible", "hidden"); }, 3000);
 }
 
 function getFormData()

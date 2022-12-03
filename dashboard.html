@@ -24,7 +24,7 @@
     </div>
 
     <div id="mainGrid">
-        <div onclick="changeDiv('addTaskPanel', 'none')">Dodaj se kurwa taska
+        <div onclick="ChangeDiv('addTaskPanel', 'block')">Dodaj se kurwa taska
         </div>
         <div>
         </div>
@@ -37,6 +37,7 @@
     </div>
 
     <div id="addTaskPanel">
+            <button id="closeButton" onclick="ChangeDiv('addTaskPanel', 'none')">X</button>
             <label for="time">Time:</label>
             <input type="number" id="time" name="time"><br><br>
             <label for="type">Type:</label>
@@ -50,11 +51,9 @@
             <label for="colors">Colors:</label>
             <input type="text" id="colors" name="colors"><br><br>
             <label for="comment">Comment:</label><br>
-            <textarea rows="5" cols="80" id="comment" name="comment"></textarea><br><br>
-            <button onclick="getFormData()"></button>
+            <textarea rows="5" cols="30" id="comment" name="comment"></textarea><br><br>
+            <button onclick="getFormData(); ChangeDiv('addTaskPanel', 'none')">Wprowadź</button>
     </div>
-
-    <button onclick="snackbarPopup();"></button>
 
 </body>
 </html>
