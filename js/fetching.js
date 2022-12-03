@@ -84,10 +84,19 @@ function genTimes(id,daynum,start,end,type){
     let bcg = document.createElement('div')
     bcg.setAttribute('class','card');
     bcg.setAttribute('id','t'+id);
-    bcg.setAttribute('ttype',type)
-    bcg.style.gridColumn=daynum+' 1';
-    bcg.style.gridRow=start+' '+end;
-    bcg.style.backgroundColor='rgba(100,30,30,0.3)';
+    bcg.setAttribute('ttype',type);
+    console.log(start);
+    start=new Date(start)
+    end=new Date(end)
+    console.log('Data: ' + start);
+    console.log('DAta: ' + end);
+    start=start.getHours()*12+Math.round(start.getMinutes()/5)
+    end=end.getHours()*12+Math.round(end.getMinutes()/5)
+    console.log('Pole: ' + start);
+    console.log('Pole: ' + end);
+    bcg.style.cssText =`grid-column: `+daynum+`/ span  1;
+                        grid-row: `+start+` / `+ end + `;
+                        background-color:rgba(100,30,30,0.3);`;
     bcg.addEventListener('click', function() {
         location.href = 'details.php?type=time&id='+id
     }, false);
@@ -99,4 +108,11 @@ function cardGen(id,daynum,start,end,type,color,comment,title,deadline,color){
 function GetHarmo(){
     
     generateHarmo(document.getElementById('leng').value,document.getElementById('starting').value)
+}
+function DivFill(){
+    let i =0;
+    while( i<288*4){
+    document.getElementById('mainGrid').appendChild(document.createElement('div'))
+    i++;
+}
 }
