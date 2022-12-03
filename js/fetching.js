@@ -192,7 +192,8 @@ function cardGen(arrr){
                             background-color:rgba(100,255,30,0.6);
                             z-index: 100;
                             width: 80%;
-                            border:1px,black,solid;`;
+                            border:1px black solid;`
+                            ;
             document.getElementById('upGrid').appendChild(bcg);
             console.log("Poszlo");
         }
