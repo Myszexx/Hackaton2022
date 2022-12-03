@@ -45,8 +45,12 @@ function ChangeDiv(div_id,status)
 
 function fetchdata(url,method='POST', variables=null){
     
-    if(url=='/hack/api/harmonogramGet.php' || url=='/hack/modules/harmo.json'){
-        fetch(url)
+
+        if (variables != null){
+        let formData = new FormData();
+        variables.forEach(element => formData.append(element[0],element[1]));
+
+        fetch(url,{method: method, body: formData})
         .then(function (response) {
             return response.text();
         })
@@ -67,19 +71,6 @@ function fetchdata(url,method='POST', variables=null){
             JSON.parse(body).tasks.forEach((repo)=>{
 
             });
-        });
-    }
-    else if (variables != null){
-        let formData = new FormData();
-        variables.forEach(element => formData.append(element[0],element[1]));
-
-        fetch(url,{method: method, body: formData})
-        .then(function (response) {
-            //console.log(response.t())
-            return response.text();
-        })
-        .then(function (body) {
-            console.log(body);
         });
     }
     else{
