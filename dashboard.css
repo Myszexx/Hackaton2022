@@ -85,7 +85,22 @@ header
 
 }
 
-#closeButton
+#insertTaskPanel
+{
+    display: none;
+    position: absolute;
+
+    left: 35%;
+    top: 35%;
+
+    height: 30vh;
+    width: 30vw;
+
+    background-color: rgba(200, 200, 200, 0.5);
+
+}
+
+#closeButton_1
 {
     position: absolute;
     top: 5%;
@@ -94,6 +109,17 @@ header
     height: 5%;
     width: 5%;
 }
+
+#closeButton_2
+{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+
+    height: 15%;
+    width: 15%;
+}
+
 .menu {
     background-color: transparent;
     border: none;
