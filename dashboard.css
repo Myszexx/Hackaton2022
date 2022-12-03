@@ -89,6 +89,8 @@ header
     border-radius: 10px;
     margin: -5px;
 
+    word-wrap: normal;
+
     background-color: orange;
 }
 

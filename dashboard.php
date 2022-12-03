@@ -62,7 +62,7 @@ else
         <div onclick="ChangeDiv('addTaskPanel', 'block')"><img class="icon" src="./gfx/addTask_button.png"></div>
         <div onclick="ChangeDiv('insertTaskPanel', 'block')"><img class="icon" src="./gfx/addTime_button.png"></div>
         <div class="w2">
-            <img style="height: 100%; border-radius: 10px; float: left" src="./gfx/defaultUsr_Icon.png">
+            <img style="margin-left: 1%; margin-top: 2.5%; height: 90%; border-radius: 10px; float: left" src="./gfx/defaultUsr_Icon.png">
             <h2 style="text-align: center;"><?php echo $data['login']; ?></h2>
             <h3 style="text-align: center;"><?php echo $data['mail']; ?></h3>
             <h3 style="text-align: center;"><?php echo $data['start_date']; ?></h3>
