@@ -46,11 +46,26 @@ header
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
     padding-top: 20px;
+    padding-left: 20px
 }
 
 #mainGrid > div
 {
     height: 40vh;
+
+    border: 2px solid red;
+    border-radius: 5px;
+
+    background-color: orange;
+}
+
+#mainGrid > div:hover
+{
+    height: 40vh;
+
+    border: 5px solid red;
+    border-radius: 5px;
+    margin: -5px;
 
     background-color: orange;
 }
@@ -172,4 +187,15 @@ header
 
     height: 50px;
     width: 5%;
+}
+
+.icon
+{
+    position: relative;
+
+    left: 10%;
+    top: 10%;
+
+    width: 75%;
+    height: 75%;
 }

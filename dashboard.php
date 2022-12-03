@@ -29,7 +29,7 @@ if(empty($_SESSION))
         </form>
     </header>
 
-    <div id="menu">
+    <div id="menu" style="z-index: 10;">
         <div class="menuPos">
             <p>Test 1<p>
         </div>
@@ -42,8 +42,8 @@ if(empty($_SESSION))
     </div>
 
     <div id="mainGrid">
-        <div onclick="ChangeDiv('addTaskPanel', 'block')">Dodaj se kurwa taska</div>
-        <div onclick="ChangeDiv('insertTaskPanel', 'block')">Wprowadź se jebane godinki</div>
+        <div onclick="ChangeDiv('addTaskPanel', 'block')"><img class="icon" src="./gfx/addTask_button.png"></div>
+        <div onclick="ChangeDiv('insertTaskPanel', 'block')"><img class="icon" src="./gfx/addTime_button.png"></div>
         <div class="w2">
         </div>
         <div>
