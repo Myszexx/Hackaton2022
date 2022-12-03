@@ -72,11 +72,14 @@ header
 
 #addTaskPanel
 {
-    
+    display: none;
     position: absolute;
 
     left: 20%;
-    top: 20%;
+    top: 10%;
+
+    height: 80vh;
+    width: 60vw;
 
     background-color: rgba(200, 200, 200, 0.5);
 
