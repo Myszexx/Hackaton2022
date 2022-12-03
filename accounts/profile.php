@@ -10,16 +10,14 @@ if(isset($_SESSION['user_id']))
 
     $res = $conn -> query($sql);
 
-    $res = $res -> fetch_assoc();
+    while($row = $res -> fetch_assoc())
+    {
+        $
+    }
 
     echo json_encode($res);
 }
 else
 {
     header('location: ../index.php');
-}
-
-function defSettings()
-{
-    $sql = "INSERT INTO settings (setting_id, user_id, setting_name, setting_value) VALUES (''," . $_SESSION['user_id'] . ", )";
 }
