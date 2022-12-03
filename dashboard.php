@@ -45,6 +45,11 @@ if(empty($_SESSION))
         <div onclick="ChangeDiv('addTaskPanel', 'block')"><img class="icon" src="./gfx/addTask_button.png"></div>
         <div onclick="ChangeDiv('insertTaskPanel', 'block')"><img class="icon" src="./gfx/addTime_button.png"></div>
         <div class="w2">
+            <img style="height: 100%; border-radius: 10px; float: left" src="./gfx/defaultUsr_Icon.png">
+            <h2 style="text-align: center;">{Login}</h2>
+            <h3 style="text-align: center;">{Mail}</h3>
+            <h3 style="text-align: center;">{Start_date}</h3>
+            <span><a href="123"><h4 style="text-align: center;" >Zmień hasło</h4></a></span>
         </div>
         <div>
         </div>
