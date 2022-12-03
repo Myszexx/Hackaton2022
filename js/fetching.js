@@ -19,9 +19,9 @@ function getFormData()
     fetchdata('/hackaton2022/api/tasksPost.php', 'POST', arr);
 }
 
-function showDiv(div_id)
+function ChangeDiv(div_id,status)
 {
-    document.getElementById(div_id).style.display='block';
+    document.getElementById(div_id).style.display=status;
 }
 
 function fetchdata(url,method='POST', variables=null){
