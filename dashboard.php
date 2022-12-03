@@ -101,13 +101,11 @@ else
     </main>
     <div id="addTaskPanel">
             <button id="closeButton_1" class="x"  onclick="ChangeDiv('addTaskPanel', 'none')">X</button>
-            <label for="time">Time:</label>
+            <label for="time">Czas trwania:</label>
             <input type="number" id="time" name="time"><br>
-            <label for="type">Type:</label>
-            <input type="number" id="type" name="type"><br>
-            <label for="title">Title:</label>
+            <label for="title">Tytuł:</label>
             <input type="text" id="title" name="title"><br>
-            <label for="priority">Priority:</label>
+            <label for="priority">Priorytet:</label>
             <input type="number" id="priority" name="priority"><br>
             <label for="type">Typ:</label>
             <select name="type" id="type">
@@ -117,9 +115,9 @@ else
             <br>
             <label for="alerts">Deadline:</label>
             <input type="date" id="alerts" name="alerts"><br>
-            <label for="colors">Colors:</label>
+            <label for="colors">Kolor:</label>
             <input type="color" id="colors" name="colors"><br>
-            <label for="comment">Comment:</label><br>
+            <label for="comment">Komentarz:</label><br>
             <textarea rows="5" cols="30" id="comment" name="comment"></textarea><br>
             <button onclick="getFormData(); ChangeDiv('addTaskPanel', 'none')">Wprowadź</button>
     </div>
