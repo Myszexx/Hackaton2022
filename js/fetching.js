@@ -6,7 +6,18 @@ let gnum1;
 let gnum2;
 let gnum3;
 
-
+function getFormData()
+{
+    let arr=[['time',document.getElementById("time").value],
+    ['type', document.getElementById("type").value],
+    ['title', document.getElementById("title").value],
+    ['priority', document.getElementById("priority").value],
+    ['alerts', document.getElementById("alerts").value],
+    ['colors', document.getElementById("colors").value],
+    ['comment', document.getElementById("comment").value]];
+    console.log(arr);
+    fetchdata('Hackaton2022/api/tasksPost.php', 'POST', arr);
+}
 
 function showDiv(div_id)
 {
