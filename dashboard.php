@@ -49,7 +49,7 @@ if(empty($_SESSION))
             <h2 style="text-align: center;">{Login}</h2>
             <h3 style="text-align: center;">{Mail}</h3>
             <h3 style="text-align: center;">{Start_date}</h3>
-            <span><a href="123"><h4 style="text-align: center;" >Zmień hasło</h4></a></span>
+            <span><a href="#"><h4 style="text-align: center;" >Zmień hasło</h4></a></span>
         </div>
         <div>
         </div>
