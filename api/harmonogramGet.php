@@ -8,25 +8,23 @@ $task = [];
 
 require_once "../accounts/connection.php";
 
-if(isset($_POST['length']) && isset($_POST['startday']) && isset($_SESSION['user_id']))
-{
+if (isset($_POST['length']) && isset($_POST['startday']) && isset($_SESSION['user_id'])) {
     $length = $_POST['length'];
     $startday = $_POST['startday'];
 
-    $sql1 = "SELECT `id`, `start_date`, `end_date`, `type` FROM free_time WHERE user_id = " . $_SESSION['user_id'] . " AND `start_date` BETWEEN ".date('Y-m-d', strtotime($startday))." AND DATE_ADD('".date('Y-m-d', strtotime($startday))."', INTERVAL ".$length." DAY)";
-    $sql2 = "SELECT `task_id`, `task_type`, `time`, `comment`, `title`, `priority`, `alerts`, `color` FROM tasks WHERE user_id = " . $_SESSION['user_id'] . " AND alerts BETWEEN ".date('Y-m-d', strtotime($startday))." AND DATE_ADD('".date('Y-m-d', strtotime($startday))."', INTERVAL ".$length." DAY)";
+    $sql1 = "SELECT `id`, `start_date`, `end_date`, `type` FROM free_time WHERE user_id = " . $_SESSION['user_id'] . " AND `start_date` BETWEEN " . date('Y-m-d', strtotime($startday)) . " AND DATE_ADD('" . date('Y-m-d', strtotime($startday)) . "', INTERVAL " . $length . " DAY)";
+    $sql2 = "SELECT `task_id`, `task_type`, `time`, `comment`, `title`, `priority`, `alerts`, `color`, DATEDIFF(`alerts`-" . date('Y-m-d', strtotime($startday)) . ") as Days_TO_END FROM tasks WHERE user_id = " . $_SESSION['user_id'] . " AND alerts BETWEEN " . date('Y-m-d', strtotime($startday)) . " AND DATE_ADD('" . date('Y-m-d', strtotime($startday)) . "', INTERVAL " . $length . " DAY) ORDER BY Days_TO_END DESC, priority DESC, time DESC";
 
-    $res1 = $conn -> query($sql1);
-    $res2 = $conn -> query($sql2);
+    $res1 = $conn->query($sql1);
+    $res2 = $conn->query($sql2);
 
-    $res1_num_rows = $res1 -> num_rows;
-    $res2_num_rows = $res2 -> num_rows;
+    $res1_num_rows = $res1->num_rows;
+    $res2_num_rows = $res2->num_rows;
 
-    $res1 = $res1 -> fetch_assoc();
-    $res2 = $res2 -> fetch_assoc();
+    $res1 = $res1->fetch_assoc();
+    $res2 = $res2->fetch_assoc();
 
-    for($i = 0; $i < $res1_num_rows; $i++)
-    {
+    for ($i = 0; $i < $res1_num_rows; $i++) {
         $time[$i] = [
             "id" => $res1['id'],
             "start_date" => $res1['start_date'],
@@ -35,8 +33,7 @@ if(isset($_POST['length']) && isset($_POST['startday']) && isset($_SESSION['user
         ];
     }
 
-    for($i = 0; $i < $res2_num_rows; $i++)
-    {
+    for ($i = 0; $i < $res2_num_rows; $i++) {
         $task[$i] = [
             "task_id" => $res2['task_id'],
             "time" => $res2['time'],
