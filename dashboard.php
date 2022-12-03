@@ -31,10 +31,8 @@
     </div>
 
     <div id="mainGrid">
-        <div onclick="ChangeDiv('addTaskPanel', 'block')">Dodaj se kurwa taska
-        </div>
-        <div>
-        </div>
+        <div onclick="ChangeDiv('addTaskPanel', 'block')">Dodaj se kurwa taska</div>
+        <div onclick="ChangeDiv('insertTaskPanel', 'block')">Wprowadź se jebane godinki</div>
         <div class="w2">
         </div>
         <div>
@@ -44,7 +42,7 @@
     </div>
 
     <div id="addTaskPanel">
-            <button id="closeButton" onclick="ChangeDiv('addTaskPanel', 'none')">X</button>
+            <button id="closeButton_1" onclick="ChangeDiv('addTaskPanel', 'none')">X</button>
             <label for="time">Time:</label>
             <input type="number" id="time" name="time"><br><br>
             <label for="type">Type:</label>
@@ -60,6 +58,21 @@
             <label for="comment">Comment:</label><br>
             <textarea rows="5" cols="30" id="comment" name="comment"></textarea><br><br>
             <button onclick="getFormData(); ChangeDiv('addTaskPanel', 'none')">Wprowadź</button>
+    </div>
+
+    <div id="insertTaskPanel">
+        <button id="closeButton_2" onclick="ChangeDiv('insertTaskPanel', 'none')">X</button>
+        <label for="start_date">Godzina początkowa:</label>
+        <input type="time" id="start_date" name="start_date"><br><br>
+        <label for="end_date">Godzina końcowa:</label>
+        <input type="time" id="end_date" name="end_date"><br><br>
+        <label for="type">Typ:</label>
+        <select name="type" id="type">
+            <option value="Praca">Praca</option>
+            <option value="Życie prywatne">Życie prywatne</option>
+        </select>
+        <br><br>
+        <button onclick="getFormData(); ChangeDiv('insertTaskPanel', 'none')">Wprowadź</button>
     </div>
 
 </body>
