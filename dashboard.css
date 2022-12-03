@@ -182,6 +182,28 @@ header
 
     float: right;
 
+    background-color: black;
+    color: white;
+
+    font-weight: bold;
+
+    top: -50px;
+    right: 15px;
+
+    height: 50px;
+    width: 5%;
+}
+
+.logOutButton:hover{
+    position: relative;
+
+    float: right;
+
+    background-color: red;
+    color: black;
+
+    font-weight: bold;
+
     top: -50px;
     right: 15px;
 
