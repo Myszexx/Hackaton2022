@@ -14,7 +14,27 @@ function showDiv(div_id)
 }
 
 function fetchdata(url,method='POST', variables=null){
-    if (variables != null){
+    
+    if(url=='/hack/api/harmonogramGet.php' || url=='/hack/modules/harmo.json'){
+        fetch(url)
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (body){
+            //return JSON.parse(body);
+            console.log(body)
+            console.log(JSON.parse(body).time.start_date);
+            console.log('Data' + gstring2);
+            JSON.parse(body).time.forEach((repo)=>{
+                let daynum=Math.floor((Date.parse(repo.start_date)-Date.parse(gstring2))/ (24*60*60*1000));
+                console.log('day' + daynum + ' s ' + Date.parse(repo.start_date));
+                genTimes(repo.id,daynum,repo.start_date,repo.end_date,repo.type);
+                setTimeout(100);
+
+            });
+        });
+    }
+    else if (variables != null){
         let formData = new FormData();
         variables.forEach(element => formData.append(element[0],element[1]));
 
@@ -24,22 +44,6 @@ function fetchdata(url,method='POST', variables=null){
         })
         .then(function (body) {
             console.log(body);
-        });
-    }
-    else if(url=='modules/harmo.json'){
-        fetch(url)
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (body) {
-            //return JSON.parse(body);
-            console.log(JSON.parse(body).time);
-            let daynum=Date.parse(bodu=y)
-            JSON.parse(body).time.forEach((repo)=>{
-                console.log(`Jeste tu`);
-                genTimes(repo.id,daynum,start,end,type);
-
-            });
         });
     }
     else{
@@ -62,8 +66,8 @@ function Test(){
 function generateHarmo(range, startdate){
     gstring1=range;
     gstring2=startdate;
-    fetchdata('./api/harmonogram.php','POST',[['type','harmonogram'],['length',range],['startday',startdate]]);
-    //fetchdata('modules/harmo.json','POST');
+    //fetchdata('/hack/api/harmonogramGet.php','POST',[['type','harmonogram'],['length',range],['startday',startdate]]);
+    fetchdata('/hack/modules/harmo.json','POST');
 }
 function genTimes(id,daynum,start,end,type){
     let bcg = document.createElement('div')
@@ -76,8 +80,12 @@ function genTimes(id,daynum,start,end,type){
     bcg.addEventListener('click', function() {
         location.href = 'details.php?type=time&id='+id
     }, false);
-    document.getElementById('main-grid').appendChild(bcg);
+    document.getElementById('mainGrid').appendChild(bcg);
 }
 function cardGen(id,daynum,start,end,type,color,comment,title,deadline,color){
 
+}
+function GetHarmo(){
+    
+    generateHarmo(document.getElementById('leng').value,document.getElementById('starting').value)
 }

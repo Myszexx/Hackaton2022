@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="harmonogram.css"/>
     <title>WLM Scheduler</title>
-    <script src="fetching.js"></script>
+    <script src="/hack/js/fetching.js"></script>
 </head>
 <body>
     <header>
@@ -24,15 +24,22 @@
             <p>Test 3<p>
         </div>
     </div>
+    <input type="date" name="starting" id="starting">
+    <input type="number" name="leng" id="leng">
+    <button onclick="GetHarmo()">Execute</button>
+    <div id="bb">
+        <div id="hours">
+            <div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <div id="mainGrid">
+            <div></div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div><div></div><div></div>
 
-    <div id="mainGrid">
-        <div></div>        <div></div>
-        <div></div>
-        <div></div>
-        <div></div> 
-        <div></div>
-        <div></div>
-        <div></div> 
+
+        </div>
     </div>
 </body>
 </html>
