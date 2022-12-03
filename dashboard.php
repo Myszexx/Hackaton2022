@@ -27,10 +27,19 @@ else
     <meta charset="UTF-8">
     <title>WLM/dashboard</title>
     <link rel="stylesheet" type="text/css" href="dashboard.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
     <script src="js/fetching.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <header>
+        <span id="logo">WLM</span>
+        <a href="accounts/logout.php"><span>Wyloguj się</span></a>
+        <a href="modules/fin/finanse.php"><span>Moje Finanse</span></a>
+        <a href="modules/harm/harmonogram.html"><span>Mój Harmonogram</span></a>
+
+    </header>
+    <header style="display:none;">
         <button class="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened')); flyOutMenu()" aria-label="Main Menu">
             <svg width="50" height="50" viewBox="0 0 100 100">
                 <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
@@ -46,34 +55,50 @@ else
         </form>
     </header>
 
-    <div id="menu" style="z-index: 10;">
-        <div class="menuPos">
-            Test 1
-        </div>
-        <div class="menuPos">
-            Test 2
-        </div>
-        <div class="menuPos">
-            Test 3
-        </div>
-    </div>
 
+    <main>
     <div id="mainGrid">
-        <div onclick="ChangeDiv('addTaskPanel', 'block')"><img class="icon" src="./gfx/addTask_button.png"></div>
-        <div onclick="ChangeDiv('insertTaskPanel', 'block')"><img class="icon" src="./gfx/addTime_button.png"></div>
-        <div class="w2">
-            <img style="margin-left: 1%; margin-top: 2.5%; height: 90%; border-radius: 10px; float: left" src="./gfx/defaultUsr_Icon.png">
-            <h2 style="text-align: center;"><?php echo $data['login']; ?></h2>
-            <h3 style="text-align: center;"><?php echo $data['mail']; ?></h3>
-            <h3 style="text-align: center;"><?php echo $data['start_date']; ?></h3>
-            <span><a href="#"><h4 style="text-align: center;" >Zmień hasło</h4></a></span>
+        <div>
+            <div class="small_grid">
+                <div class="lu">Twoje zadania<br><h3>Najbliższe zadanie</h3></div>
+                <div class="ru"  onclick="ChangeDiv('addTaskPanel', 'block')"></div>
+                <div class="do"><h3>Przejdź do zadań</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
+
+            </div>
         </div>
         <div>
+        <div class="small_grid">
+                <div class="lu">Twoje przedziały<br><h3>Najbliższy czas</h3></div>
+                <div class="ru" onclick="ChangeDiv('insertTaskPanel', 'block')"><img class="bb" src="gfx/addTask.png"></div>
+                <div class="do"><h3>Przejdź do zadań</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
+
+            </div>
         </div>
-        <div class="w3">
+        <div>
+            <div class="small_grid">
+                    <div class="lu">                <?php echo $data['login']; ?><br><h3><?php echo $data['mail']; ?></h3></div>
+                    <div class="ru"></div>
+                    <div class="do"></div>
+            <!--<div class="w2">
+                <img style="margin-left: 1%; margin-top: 2.5%; height: 90%; border-radius: 10px; float: left" src="./gfx/defaultUsr_Icon.png">
+                <h2 style="text-align: center;"></h2>
+                <h3 style="text-align: center;"></h3>
+                <h3 style="text-align: center;"><?php echo $data['start_date']; ?></h3>
+                <span><a href="#"><h4 style="text-align: center;" >Zmień hasło</h4></a></span>-->
+            </div>
+        </div>
+        <div class="menu_card">
+                        <div class="small_grid">
+                <div class="lu">                Moje Finanse<br><h3>Moje saldo</h3></div>
+                <div class="ru" ></div>
+                <div class="do"><h3>Przejdź do finansów</h3><a><img src="gfx/arrow.png" class='arrow' onclick="ChangeDiv('addTaskPanel', 'block')"></a></div>
+
+            </div>
+        </div>
+        <div style="grid-column: 1 / span 4;">
         </div>
     </div>
-
+    </main>
     <div id="addTaskPanel">
             <button id="closeButton_1" onclick="ChangeDiv('addTaskPanel', 'none')">X</button>
             <label for="time">Time:</label>
