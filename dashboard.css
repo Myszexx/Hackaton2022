@@ -69,3 +69,15 @@ header
 {
     grid-column: span 3;
 }
+
+#addTaskPanel
+{
+    
+    position: absolute;
+
+    left: 20%;
+    top: 20%;
+
+    background-color: rgba(200, 200, 200, 0.5);
+
+}
