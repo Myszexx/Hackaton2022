@@ -122,7 +122,7 @@ function genTimes(id,daynum,start,end,type){
     }, false);
     document.getElementById('upGrid').appendChild(bcg);
     console.log(arr);
-    return arr
+    return arr;
 }
 function cardGen(id,daynum,start,end,type,color,comment,title,deadline,color){
 
@@ -134,7 +134,9 @@ function GetHarmo(){
 function DivFill(){
     let i =0;
     while( i<288*4){
-    document.getElementById('mainGrid').appendChild(document.createElement('div'))
+    let d = document.createElement('div')
+    d.setAttribute('Id','D'+i)
+    document.getElementById('mainGrid').appendChild(d)
     i++;
 }
 }
