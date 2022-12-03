@@ -20,7 +20,7 @@ function flyOutMenu()
     }
 }
 
-function snackbarPopup(message)
+function snackbarPopup(message,sec)
 {
     var div= document.createElement("div");        
     div.innerHTML = "<div>"+ message +"</div>"; 
@@ -36,7 +36,7 @@ function snackbarPopup(message)
     div.style.borderRadius = "2px";
     document.querySelector('body').appendChild(div);
 
-    setTimeout(function(){ div.style.visibility = div.style.visibility.replace("visible", "hidden"); }, 3000);
+    setTimeout(function(){ div.style.visibility = div.style.visibility.replace("visible", "hidden"); }, sec*1000);
 }
 
 function getFormData()
@@ -254,3 +254,4 @@ function hexToRgbA(hex){
     }
     throw new Error('Bad Hex');
 }
+
