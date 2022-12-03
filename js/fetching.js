@@ -6,6 +6,25 @@ let gnum1;
 let gnum2;
 let gnum3;
 
+function snackbarPopup(message)
+{
+    var div= document.createElement("div");        
+    div.innerHTML = "<div>"+ message +"</div>"; 
+    div.style.visibility = "visible";
+    div.style.color = "#fff";
+    div.style.backgroundColor = 'blue';
+    div.style.textAlign = "center";
+    div.style.position = "fixed";
+    div.style.top = "40px";
+    div.style.fontSize = "40px";
+    div.style.left = "30%";
+    div.style.right = "30%";
+    div.style.borderRadius = "2px";
+    document.querySelector('body').appendChild(div);
+
+    setTimeout(function(){ div.style.visibility = div.style.visibility.replace("visible", "hidden"); }, 3000);
+}
+
 function getFormData()
 {
     let arr=[['time',document.getElementById("time").value],
