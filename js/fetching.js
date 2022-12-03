@@ -1,6 +1,7 @@
-
-
-
+function showDiv()
+{
+    
+}
 
 function fetchdata(url,method='POST', variables=null){
     if (variables != null){
